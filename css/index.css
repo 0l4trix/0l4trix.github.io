@@ -4,34 +4,99 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     text-decoration: none;
+    border-collapse: collapse;
+    color: white;
 }
 
 body {
-    width: 80%;
     text-align: center;
     margin: 0 auto;
-    background-color: #ddd;
-    font-size: 18px;
+    font-size: 20px;
+    background-color: black;
+    letter-spacing: 1px;
 }
 
 header {
     width: 100%;
     height: 200px;
-    background-image: url(../img/1000_F_145262541_nvwpuf7PGXjPJbZAyzNj0QCyXMck3gCh.jpg);
+    background-image: url(../img/header.jpg);
+    background-color: black;
     background-position: center;
     background-size: cover;
 }
 
 div.dir {
-    width: 25%;
-    background-color: rgba(3, 255, 5, 0.6);
-    float: right;
+    display: block;
+    float: left;
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
-    border-radius: 0 0 0 25px;
+    background-color: black;
+    width: 100%;
+    height: 30px;
 }
 
-div.dir:after {
+ul.ani {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+ul.ani li {
+    position: relative;
+}
+
+ul.ani li a {
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+    font-size: 25px;
+}
+
+ul.ani li a::before {
+    content: attr(data-text);
+    position: absolute;
+    color: var(--clr);
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    transition: 1s;
+    white-space: nowrap;
+    border-right: 8px solid var(--clr);
+    -webkit-text-stroke: 1px var(--clr);
+}
+
+ul.ani li a:hover::before {
+    width: 96.5%;
+    height: 100%;
+    filter: drop-shadow(0 0 25px var(--clr))
+}
+
+div.nav {
+    display: block;
+    float: left;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 30px;
+    background-color: black;
+    width: 15%;
+}
+
+div.nav a {
+    padding: 15px 0;
+    /*How do I move this to the center?*/
+}
+
+div.nav a:hover {
+    color: var(--clr);
+}
+
+div.dir:after,
+div.nav:after,
+li a {
     content: "";
     clear: both;
     display: block;
@@ -41,42 +106,93 @@ ul li {
     list-style-type: none;
 }
 
-ul li:hover {
-    background-color: black;
-}
-
-li a{
-    color: white;
-    font-size: 20px;
+li a {
+    display: block;
+    float: left;
 }
 
 div.content {
-    background-color: white;
-    color: #444;
-}
-
-section {
-    padding: 20px 50px;
-    margin: 25px;
+    width: 85%;
+    margin: 0 0 0 auto;
+    padding: 30px;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(31,29,139,1) 52%, rgba(141,10,221,1) 98%);
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    font-style: oblique;
+    background-image: ˙();
+    background-size: cover;
+    background-position: center;
 }
 
 div.main {
-    padding: 50px 50px 20px;
-    margin: 0 25px 25px;
-    font-size: 20px;
+    padding: 40px;
+}
+
+section {
+    padding: 15px 70px;
+}
+
+section a {
+    border-bottom: 4px double black;
+}
+
+section li {
+    padding: 3px;
+}
+
+section li a {
+    border: none;
+    /*How do I move this to the center?*/
+}
+
+section a:hover {
+    color: black;
+    text-shadow: -1px -1px 0 cyan, 1px -1px 0 cyan, -1px 1px 0 cyan, 1px 1px 0 cyan;
+}
+
+h1#first {
+    padding-bottom: 15px;
 }
 
 h1 {
-    padding-bottom: 20px;
+    padding-top: 50px;
+}
+
+h2 {
+    padding: 20px;
+}
+
+p {
+    padding: 10px;
 }
 
 img {
-    padding: 18px 0;
-    max-width: 100%;
+    width: 70%;
+}
+
+table {
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+tr:nth-child(2n-1) {
+    background: linear-gradient(90deg, rgba(13,219,189,1) 0%, rgba(41,7,128,1) 100%);
+}
+
+tr:nth-child(2n-2) {
+    background: linear-gradient(90deg, rgba(41,7,128,1) 0%, rgba(13,219,189,1) 100%);
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 10px 20px;
 }
 
 footer {
-    padding: 30px;
-    background-color: rgba(3, 255, 5, 0.6);
-    color: white;
+    background-color: black;
+    padding: 15px;
+}
+
+input {
+    color: black;
 }
