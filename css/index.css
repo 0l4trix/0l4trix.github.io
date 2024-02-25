@@ -4,195 +4,257 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     text-decoration: none;
-    border-collapse: collapse;
-    color: white;
+    font-family: Roboto;
+    font-size: 16px;
 }
 
 body {
-    text-align: center;
-    margin: 0 auto;
-    font-size: 20px;
-    background-color: black;
-    letter-spacing: 1px;
+    margin: 10px;
+    width: 80%;
+    border: 2px solid #ddd;
+    background-color: #d7b520;
+    margin: auto;
+}
+
+div.content {
+    background-color: #fff;
+}
+
+div.frame {
+    padding: 20px;
 }
 
 header {
-    width: 100%;
-    height: 200px;
-    background-image: url(../img/header.jpg);
-    background-color: black;
-    background-position: center;
-    background-size: cover;
+    background-image: url(../img/pexels-roderick-salatan-14222331.jpg);
+    background-color: #e7e6e6;
+    background-position: 100% 25%;
+    height: 7em;
+    text-align: center;
 }
 
-div.dir {
-    display: block;
-    float: left;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    background-color: black;
-    width: 100%;
-    height: 30px;
+footer {
+    height: 6em;
+    background: #e7e6e6;
+    text-align: center;
+    padding-top: 2.2em !important;
 }
 
-ul.ani {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
+header,
+footer,
+aside,
+section {
+    border: 2px solid #41719c;
+    border-radius: 30px;
+    padding: 10px;
 }
 
-ul.ani li {
-    position: relative;
+div.main {
+    margin: auto;
 }
 
-ul.ani li a {
-    text-decoration: none;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: transparent;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
-    font-size: 25px;
-}
-
-ul.ani li a::before {
-    content: attr(data-text);
-    position: absolute;
-    color: var(--clr);
-    width: 0;
-    height: 100%;
-    overflow: hidden;
-    transition: 1s;
-    white-space: nowrap;
-    border-right: 8px solid var(--clr);
-    -webkit-text-stroke: 1px var(--clr);
-}
-
-ul.ani li a:hover::before {
-    width: 96.5%;
-    height: 100%;
-    filter: drop-shadow(0 0 25px var(--clr))
-}
-
-div.nav {
-    display: block;
-    float: left;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 30px;
-    background-color: black;
-    width: 15%;
-}
-
-div.nav a {
-    padding: 15px 0;
-    /*How do I move this to the center?*/
-}
-
-div.nav a:hover {
-    color: var(--clr);
-}
-
-div.dir:after,
-div.nav:after,
-li a {
+div.main:after {
     content: "";
     clear: both;
-    display: block;
+    display: table;
+}
+
+/* Nav Start */
+
+div.left {
+    float: left;
+    padding-left: 20px;
+    width: 30%;
+}
+
+aside {
+    background: #5b9bd5;
+    text-align: center;
 }
 
 ul li {
     list-style-type: none;
+    margin: 5px;
 }
 
 li a {
-    display: block;
-    float: left;
-}
-
-div.content {
-    width: 85%;
-    margin: 0 0 0 auto;
-    padding: 30px;
-    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(31,29,139,1) 52%, rgba(141,10,221,1) 98%);
-    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-    font-style: oblique;
-    background-image: ˙();
-    background-size: cover;
-    background-position: center;
-}
-
-div.main {
-    padding: 40px;
-}
-
-section {
-    padding: 15px 70px;
-}
-
-section a {
-    border-bottom: 4px double black;
-}
-
-section li {
-    padding: 3px;
-}
-
-section li a {
-    border: none;
-    /*How do I move this to the center?*/
-}
-
-section a:hover {
     color: black;
-    text-shadow: -1px -1px 0 cyan, 1px -1px 0 cyan, -1px 1px 0 cyan, 1px 1px 0 cyan;
+    text-shadow: 3px 3px 3px rgb(25, 61, 124);
+    font-size: 1.2em;
+    font-weight: 450;
 }
 
-h1#first {
-    padding-bottom: 15px;
+li a:hover {
+    color: #deebf7;
 }
 
-h1 {
-    padding-top: 50px;
+button.dropbtn {
+    display: none;
 }
 
-h2 {
-    padding: 20px;
+form {
+    margin: 20px;
 }
 
-p {
-    padding: 10px;
+label#form {
+    font-size: 1.4em;
+    border-top: 2px solid black;
+    padding: 15px;
+    text-shadow: 2px 2px 2px #8ebfed;
 }
 
-img {
+form label {
+    padding: 5px;
+    font-weight: 450;
+}
+
+form label,
+form input {
+    display: block;
+    margin: auto;
+}
+
+/* Nav End */
+
+div.right {
+    float: right;
+    padding: 0 20px;
     width: 70%;
 }
 
-table {
-    margin: 0 auto;
-    margin-top: 25px;
+section#balaton {
+    background: #fbe5d6;
 }
 
-tr:nth-child(2n-1) {
-    background: linear-gradient(90deg, rgba(13,219,189,1) 0%, rgba(41,7,128,1) 100%);
+section#tisza-to {
+    background: #fff2cc;
+    margin: 20px 0;
 }
 
-tr:nth-child(2n-2) {
-    background: linear-gradient(90deg, rgba(41,7,128,1) 0%, rgba(13,219,189,1) 100%);
+section#szelidi-to {
+    background: #deebf7;
 }
 
-th,
-td {
-    border: 1px solid black;
-    padding: 10px 20px;
-}
-
-footer {
-    background-color: black;
-    padding: 15px;
-}
-
-input {
+h1 {
     color: black;
+    text-transform: uppercase;
+    text-shadow:
+        0.07em 0 white,
+        0 0.07em white,
+        -0.07em 0 white,
+        0 -0.07em white;
+}
+
+h1,
+h2,
+footer {
+    font-size: 1.2em;
+}
+
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h2,
+p {
+    padding: 10px;
+    word-spacing: 5px;
+}
+
+img {
+    float: right;
+    padding: 10px;
+    width: 55%;
+    border-radius: 30px;
+}
+
+@media screen and (max-width: 1220px) {
+    header {
+        background-position: 50% 20%
+    }
+
+    div.left {
+        float: none;
+        width: 100%;
+        padding-right: 20px;
+        padding-bottom: 20px;
+    }
+
+    div.right {
+        float: none;
+        width: 100%;
+    }
+
+    li a {
+        float: left;
+        margin: 10px;
+    }
+
+    button.dropbtn {
+        display: block;
+        background-color: #deebf7;
+        border: 3px outset #8ebfed;
+        border-bottom-color: #41719c;
+        border-right-color: #41719c;
+        border-radius: 20px;
+        padding: 5px;
+        margin: 10px;
+    }
+    div.dropdown {
+        position: relative;
+        display: inline-block;
+        bottom: 4px;
+    }
+
+    div.dropdown:hover div.drop-content {
+        display: block;
+    }
+
+    div.dropdown:hover button.dropbtn {
+        border: 3px inset #8ebfed;
+        border-top-color: #41719c;
+        border-left-color: #41719c;
+
+    }
+
+    div.drop-content {
+        display: none;
+        position: absolute;
+        background-color: #deebf7;
+        border: 2px solid #41719c;
+        border-top: none;
+        border-radius: 30px;
+        -moz-transform: translate(-65px, 0px);
+        -webkit-transform: translate(-65px, 0px);
+        -o-transform: translate(-65px, 0px);
+        -ms-transform: translate(-65px, 0px);
+    }
+
+    label#form {
+        border: none;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    header {
+        background-position: 40% 20%
+    }
+
+    section {
+        margin: auto;
+        text-align: center;
+    }
+    img {
+        width: 80%;
+        float: none;
+    }
+
+    h2,
+    p {
+        word-spacing: normal;
+    }
+
+    li a {
+        float: none;
+    }
 }

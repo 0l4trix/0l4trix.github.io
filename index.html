@@ -1,219 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About PBBGs</title>
+    <title>Vízparti üdülés</title>
     <link rel="stylesheet" href="css/index.css">
-    <link rel="icon" type="img" href="favicon-16x16.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <header></header>
-
-    <div class="dir">
-        <ul class="ani">
-            <li style="--clr:#ff6492">
-              <a href="index.html" data-text="&nbsp;About PBBGs">&nbsp;About PBBGs&nbsp;</a>
-            </li>
-            <li style="--clr:#6b0db3">
-              <a href="textbased.html" data-text="&nbsp;Text-based games">&nbsp;Text-based games&nbsp;</a>
-            </li>
-            <li style="--clr:#0001ff">
-              <a href="virtualpet.html" data-text="&nbsp;Virtual pet sites">&nbsp;Virtual pet sites&nbsp;</a>
-            </li>
-            <li style="--clr:#00ffc9">
-              <a href="other.html" data-text="&nbsp;Other PBBGs">&nbsp;Other PBBGs&nbsp;</a>
-            </li>
-        </ul>
-    </div>
-
-    <div class="nav">
-        <ul>
-            <li style="--clr:#ff6492"><a href="#definition">What are PBBG's?</a></li>
-            <li style="--clr:#6b0db3"><a href="#vs.mmo">PBBG vs MMORPG?</a></li>
-            <li style="--clr:#0001ff"><a href="#vs.textbased">PBBG vs text-based games?</a></li>
-            <li style="--clr:#00ffc9"><a href="#types">Types of PBBGs</a></li>
-            <li style="--clr:#ff6492"><a href="#gameplay">Gameplay in PBBGs</a></li>
-            <li style="--clr:#6b0db3"><a href="#advantages">Advantages of PBBGs</a></li>
-            <li style="--clr:#0001ff"><a href="#disappearance">Disappearance of PBBGs</a></li>
-            <li style="--clr:#00ffc9"><a href="#players">Playerbase</a></li>
-            <li style="--clr:#ff6492"><a href="#links">Where to find PBBGs</a></li>
-        </ul>
-    </div>
-
     <div class="content">
-        <div class="main">
-            <h1 id="first">PBBGs</h1>
-            <img src="img/computer1.jpg" alt="Retro computer">
+        <div class="frame">
+        <header>
+            <h1><i>Vízparti üdülés Magyarországon</i></h1>
+        </header>
         </div>
 
-        <section id="definition">
-            <h2>What are PBBG's?</h2>
-            <p>PBBG stands for a Persistent Browser Based Game which means that they are games that are entirely
-                contained within a website which can be played directly from your browser without the need to download
-                any software or game engines. They may sometimes be referred to as a MPBBG (Multiplayer Persistant
-                Browser Based Game); however, since a multiplayer environment is already assumed with a PBBG this is
-                rarely seen. These should not be confused with your basic games such as Bejeweled, pool, or other basic
-                types of games that you can play online; the key difference is in the “persistent” nature of the game.
-                The PBBG Project defines this as a requirement for a PBBG when “progress in the game is achieved over
-                multiple playing sessions.”</p>
-            <p>With a PBBG you build a character, village, world, etc. over time and the game grows and changes in
-                dynamics as you advance. Often, certain elements of game play may also continue over real time and /or
-                while you are offline and not actually logged into the game. For example, one way to earn gold in
-                Monsters Game (a vampire verses werewolf PBBG) is to work in the graveyard for a number of hours. You
-                choose to work for eight hours, go to bed, and when you wake up your shift will have ended and you can
-                collect your pay.</p>
-        </section>
+        <div class="main">
+            <div class="left">
+            <aside>
+                <ul>
+                    <li><a href="#balaton">Balaton</a></li>
+                    <li><a href="#tisza-to">Tisza-tó</a></li>
+                    <li><a href="#szeledi-to">Szeledi-tó</a></li>
+                </ul>
+                <div class="dropdown">
+                    <button class="dropbtn">Jelentkezés</button>
+                    <div class="drop-content">
+                <form action="" method="post" id="form">
+                <label id="form" for="form">Kérem töltse ki a jelentkezési űrlapot</label>
+                    <label for="name">Név</label>
+                    <input type="text" name="name" id="name" placeholder="Szabó János" required>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="abc@email.com" required>
+                    <label for="tel">Phone number</label>
+                    <input type="tel" name="tel" id="tel" value="+36">
 
-        <section id="vs.mmo">
-            <h2>What is the difference between a PBBG and MMORPG?</h2>
-            <p>While there are some elements that overlap between a PBBG and a MMORPG the main difference is that the
-                PBBG is run from a website that loads in your browser and does not rely on any other software that the
-                player has to download. Because of this the PBBG is often not as graphically intense and relies on 2d
-                game graphics. It may often offer more plot driven play that can be a lot of fun for both newcomers and
-                seasoned players alike.</p>
-        </section>
+                    <label for="lake">Melyik tó érdekli?</label>
+                    <select name="lake" id="lake" required>
+                    <option value="">válasszon</option>
+                    <option value="balaton">Balaton</option>
+                    <option value="tisza-to">Tisza-tó</option>
+                    <option value="szelidi-to">Szelidi-tó</option>
+                    </select>
 
-        <section id="vs.textbased">
-            <h2>What is the difference between PBBG's and text based RPG's?</h2>
-            <p>There is a tremendous amount of over lap between PBBG's and the traditional text base RPG's. However,
-                there are some games in which there is very little in the way of role playing and the game focuses
-                mainly on the mechanics of the game engine itself. This variety allows you to choose which type of
-                gaming environment you enjoy most.</p>
-        </section>
+                    <label for="lodging">Milyen szállást keres?</label>
+                    <select name="lodging" id="lodging" multiple>
+                    <option value="balaton">szálloda</option>
+                    <option value="tisza-to">apartmanház</option>
+                    <option value="szelidi-to">kemping</option>
+                    </select>
 
-        <section id="types">
-            <h2>What type of PBBG's are out there?</h2>
-            <p>PBBG's come in just about every genre that you can think of from vampire worlds, space battles, pirates,
-                fantasy themed, samurai wars, to nation building and political simulation games.</p>
-        </section>
+                    <label for="service">Milyen ellátás legyen?</label>
+                    <select name="service" id="service">
+                    <option value="">válasszon</option>
+                    <option value="teljes">teljes</option>
+                    <option value="fel-panzio">fél panzió</option>
+                    <option value="reggeli">csak reggeli</option>
+                    <option value="none">nem kérek ellátást</option>
+                    </select>
 
-        <section id="gameplay">
-            <h2>What is the gameplay like in a PBBG?</h2>
-            <ul>Gameplay in a PBBG can vary somewhat from game to game but will generally incorporate some or all of
-                the following elements:
-                <li>Hunts or Searches: Many game engines in the PBBG categories will generate some sort of a search or
-                    hunt function in which you go on searches through various areas in the game world to find items,
-                    collect money, or other elements that you will need to play the game. You are often granted a
-                    certain number of searches or hunts per day.</li>
-                <li>Battles Against NPC's: Most PBBG's will have a battle system that randomly pits you against an NPC
-                    (Non-Playable Character) to strengthen your skills or gain resources.</li>
-                <li>PVP Battles: Another feature of many PBBG's is a dice role type battle system that allows you to
-                    attack other players and battle to win resources or experience and strengthen your stats.</li>
-                <li>Banking System and Economy: Whether it is collecting gold or some other world specific currency,
-                    most PBBG games will have some sort of an internal economy and a banking system that allows you to
-                    earn money and purchase items that you will need for the game.</li>
-                <li>Clans/Guilds/Covens: Another common feature of PBBG's is a clan or guild system which helps you to
-                    meet other players and advance game play by working on a team and forming alliances against your
-                    enemies.</li>
-                <li>Since every game can be unique there may be several other features such as quests, group missions,
-                    homes or world building, etc. so you will have lots to explore and do in a PBBG.</li>
-            </ul>
-        </section>
+                    <label for="other">Egyéb üzenet:</label>
+                    <textarea name="other" id="other" cols="25" rows="10"></textarea>
+                    <input type="submit" value="Mehet">
+                </form>
+            </div>
+            </div>
+            </aside>
+            </div>
 
-        <section id="advantages">
-            <h2>What are the advantages of playing a PBBG?</h2>
-            <p>PBBG's actually have quite a few advantages over some of the other styles of games available online. For
-                one, because they can be played entirely from your browser there is no need to download any software.
-                This leaves more of your hard drive space free, plus it gives you a chance to play from anywhere that
-                you have an internet connection. Since most PBBG's rely on a standard script language such as php, you
-                can
-                even access some of them from mobile browsers on your phone or PDA. This allows you to get your gaming
-                fix from just about anywhere.</p>
-            <p>While some PBBG's offer special items or extra benefits for supporting the game, most of them are free to
-                play.</p>
-            <p>PBBG's can often be enjoyed by both the average gamer and the more hardcore types since they do not
-                require you to be present 24/7 to make progress on your character.</p>
-            <p>PBBG's offer a unique blend of creative control and pre-scripted game engine play so you never get bored
-                doing the same thing over and over again.</p>
-        </section>
+            <div class="right">
+            <section id="balaton">
+                <img src="img/Balaton.jpg" alt="Balaton">
+                <h2><i>Balaton</i></h2>
+                <p>A Balaton Közép-Európa legnagyobb édesvizű tava, hazánk egyik legnagyobb természeti kincse. A Balaton
+                    vonzerejét kellemes hőmérsékletű vize, kedvező klimatikus adottsága és a változatos szépségű táj
+                    jelenti. A Balaton térségének értékét nemcsak a táj egyedi szépsége, a déli-part homokfövenye, a
+                    Balaton-felvidék lankás szőlői, hanem vizének minősége is meghatározza. A tó és környéke a Bakony és
+                    az Alpok közelségének köszönhetően az ország egyik legtisztább levegőjű térsége. A napsütéses órák
+                    száma évente a 2000 órát is meghaladja, ez annyi, mint a francia Riviérán. A tó vize selymes, lágy,
+                    fürdőzésre kiválóan alkalmas, a vízhőmérséklet az alacsony átlagos mélység miatt gyorsan követi a
+                    levegő hőmérsékleti változásait, nyaranta nem ritka a 25 Celsius-fok feletti vízhőmérséklet. A tó
+                    vize oxigénben dús, hidrokarbonátos, színes növényi és állati fauna tárháza. A Balatonban élő
+                    halfajok közel fele a pontyfélék közül kerül ki, a nádasokban élő madárvilág között számos
+                    fokozottan védett faj szerepel.</p>
+            </section>
 
-        <section id="disappearance">
-            <h2>Why did they start disappearing?</h2>
-            <p>PBBGs had brought accessibility to the table, but accessibility evolved in a big way with the launch of
-                iPhone's App Store in 2008. While Apple didn't invent mobile gaming - mobile games existed in the
-                mid-90s - they did launch it into a new era, and in doing so they changed one of the most critical
-                aspects of digital gaming: where people play. PBBGs, and browser-based games in general, now had viable
-                competition for “play anywhere” experiences, with mobile offering even more options. Playing at school
-                and work was old news; you could now play games on the bus, on your lunch break or even on the toilet.
-            </p>
-            <p>While many PBBGs still technically worked in a mobile web browser, the experiences often paled in
-                comparison to native mobile apps, and many games simply looked horrible on mobile because they were
-                never designed for that viewing experience. Playing a game in the browser, once a liberating experience
-                to play anywhere, had become a glaringly restrictive experience as the definition of “anywhere” changed
-                and the experience failed to translate. Sadly, the strength of being built for a web browser had become
-                a weakness.</p>
-            <p>Although web technology did eventually catch up, with mobile-friendly responsive designs becoming more
-                common in the early 2010s thanks to Media Queries, most PBBGs failed to adapt. Many still haven't caught
-                up, which is evident by the number of games that still lack a mobile-friendly web design, let alone an
-                actual mobile app.</p>
-        </section>
+            <section id="tisza-to">
+                <img src="img/tisza-91367_1280.jpg" alt="Tisza-tó">
+                <h2><i>Tisza-tó</i></h2>
+                <p>Az Alföld északi részén található Tisza-tó az ország legnagyobb mesterséges tava. 127 km² nagyságú
+                    felületével és 1,3 méteres átlagmélységével a Balaton után a második legnagyobb állóvizünk. A
+                    Tisza-tó a Hortobágyi Nemzeti Park része, így 1999 óta az UNESCO Világörökségének része is. A tavat
+                    1968-ban kezdték el kialakítani azzal a céllal, hogy a környék vízellátását javítsák, illetve
+                    létrehozzanak egy turisztikai és vízi sportoknak kedvező területet. A szigetekkel tarkított tó az
+                    1990-es évekre nyerte el mai formáját. A tó középső része horgászásra van kialakítva. A horgászni
+                    vágyókat kikötők, szálláshelyek, boltok várják, a tó pedig 50 féle halfajt is kínál. Délen, az
+                    Abádszalóki-öbölben a terület a vízi sportok szerelmeseinek kedvez és Európában egyedülálló módon a
+                    motoros sportolás is engedélyezett. 14 négyzetkilométeren lehet dzsetszkizni, vízisízni, szörfözni
+                    vagy vitorlázni. A környékbeli települések partjain kialakított strandok fokozatosan mélyülő
+                    partszakaszokkal várják a családos nyaralókat. Ezenkívül a Tisza-tó településein termálvizes fürdők
+                    is találhatóak.</p>
+            </section>
 
-        <section id="players">
-            <h2>How many people still play PBBGs?</h2>
-            <p>While PBBGs are admittedly past their prime, their are still quite a few people who enjoy playing them.
-                Most of these games tend to have a few hundred players online at the same time at best, however there
-                are a few that even go into the thousands.</p>
+            <section id="szelidi-to">
+                <img src="img/Szelid.jpg" alt="Szelidi-tó">
+                <h2><i>Szelidi-tó</i></h2>
+                <p>A Kiskunság legkedveltebb kiránduló- és üdülőhelye a Szelidi-tó. A tó homokos strandja, kempingjei,
+                    vendéglői, szabadtéri színpada nyugodt kikapcsolódást és mozgalmasabb szórakozást is kínálnak az
+                    idelátogató vendégeknek. A tó 5 km hosszú, 150-200 m széles és 3-4 m mély, ezzel hazánk ötödik
+                    legnagyobb tava, melyet még a Duna vize mélyített ki évezredekkel ezelőtt. A talajból sok
+                    nátrium-magnézium-karbonát és nátrium-jodid oldódik ki, ezért már a középkorban is használták
+                    sebgyógyításra, ma viszont inkább idegrendszeri, hormonális és reumatikus bántalmak kezelésére
+                    ajánlják. A Szelidi-tavat 360 hektáros természetvédelmi terület övezi, ami növényi gazdagságával a
+                    Kiskunsági Nemzeti Park egyik gyöngyszeme. A tó környékén így kellemes sétákat vagy kerékpártúrákat
+                    tehet az idelátogató. A vendégeket egy ingyenesen látogatható szabad strand és egy nagyobb igényesen
+                    kialakított fizetős strand várja. A parton vízibiciklik, csónakok, kenuk, és szörfök bérelhetők, így
+                    akár rövidebb vízi túrák is tehetők. A gyerekeket kiépített játszóterek és egy óriás vízicsúszda
+                    várja. A horgászat kedvelői sem csalódhatnak a tóban amúr, keszeg, kárász, ponty és törpeharcsa
+                    rendszeresen akad a horgokra.</p>
+            </section>
+        </div>
+        </div>
 
-            <table>
-                <tbody>
-                    <tr>
-                        <th>Game</th>
-                        <th>Average online players</th>
-                        <th>Active since</th>
-                    </tr>
-
-                    <tr>
-                        <td>Torn</td>
-                        <td>~6500</td>
-                        <td>2004</td>
-                    </tr>
-
-                    <tr>
-                        <td>Flight Rising</td>
-                        <td>~3500</td>
-                        <td>2013</td>
-                    </tr>
-
-                    <tr>
-                        <td>Farm RPG</td>
-                        <td>~3000</td>
-                        <td>2021</td>
-                    </tr>
-
-                    <tr>
-                        <td>Milky Way Idle</td>
-                        <td>~2500</td>
-                        <td>2023</td>
-                    </tr>
-            </table>
-
-            </tbody>
-        </section>
-
-        <section id="links">
-            <h2>Where can you find PBBG's?</h2>
-            <ul>
-                <li><a href="https://pbbg.com/" target="_blank">pbbg.com</a>Probably the best collection of PBBGs one
-                    can find on the internet.</li>
-                <li><a href="https://smeltery.gg/" target="_blank">Smeltery</a>A relatively new site dedicated to
-                    helping players recommend and discover new games.</li>
-                <li><a href="https://www.reddit.com/r/PBBG/" target="_blank">Reddit</a>An active community where one can
-                    easily find new and in-development titles or get game recommendations.</li>
-            </ul>
-        </section>
+        <div class="frame">
+        <footer>
+            &copy; Minden jog fenntartva
+        </footer>
     </div>
-
-    <footer>
-        <form action="" method="post">
-            <label for="email">Subscribe to our newsletter!</label>
-            <input type="email" name="email" id="email">
-            <input type="submit" value="Subscribe">
-        </form>
-        &copy; Minden jog fenntartva
-    </footer>
+    </div>
 
 
 </body>
