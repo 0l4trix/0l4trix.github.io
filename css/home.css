@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    text-align: center;
+}
+
+div#content {
+    height: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas:
+    "header header"
+    "header header"
+    "s-1 s-2"
+    "s-1 s-2"
+    "s-1 s-2"
+    "s-1 s-2"
+    "s-1 s-2"
+}
+
+#content > * {
+    padding: 30px;
+    text-shadow:
+0.07em 0 white,
+0 0.07em white,
+-0.07em 0 white,
+0 -0.07em white;
+}
+
+header {
+    grid-area: header;
+    background-image: url(../img/grey.jpg);
+    background-size: cover;
+}
+
+section#one {
+    grid-area: s-1;
+    background-image: url(../img/hiroshima.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    filter: grayscale(100%);
+    transition: all 0.7s ease-in-out;
+    z-index: 1;
+}
+
+section#one:hover {
+    filter: grayscale(0);
+    margin-right: -13vw;
+    background-position: 50% 65%;
+    z-index: 2000;
+    text-shadow:
+0.07em 0 #97BC62FF,
+0 0.07em #97BC62FF,
+-0.07em 0 #97BC62FF,
+0 -0.07em #97BC62FF;
+}
+
+section#two {
+    grid-area: s-2;
+    background-image: url(../img/nagasaki.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    filter: grayscale(100%);
+    transition: all 0.7s ease-in-out;
+    z-index: 2;
+}
+
+section#two:hover {
+    filter: grayscale(0);
+    margin-left: -13vw;
+    background-position: 50% 25%;
+    z-index: 2000;
+    text-shadow:
+0.07em 0 #97BC62FF,
+0 0.07em #97BC62FF,
+-0.07em 0 #97BC62FF,
+0 -0.07em #97BC62FF;
+}
+
+section#one:hover a {
+    color: #000e01;
+}
+
+section#two:hover a {
+    color: #000e01;
+}
+
+section a {
+    text-decoration: none;
+    font-size: 6vw;
+    color: black;
+    padding: 5vw;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+h2 {
+    padding-top: 20vh;
+}
+
+p {
+    padding: 20px;
+}
+
+@media screen and (max-width: 800px) {
+    div#content {
+    grid-template-areas:
+    "header header"
+    "header header"
+    "s-1 s-1"
+    "s-1 s-1"
+    "s-2 s-2"
+    "s-2 s-2"
+    }
+
+    section#one:hover {
+        margin-bottom: -13vw;
+        background-position: 50% 40%;
+        z-index: 2000;
+    }
+
+    section#two:hover {
+        margin-top: -13vw;
+        background-position: 50% 20%;
+        z-index: 2000;
+    }
+}
