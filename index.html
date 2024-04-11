@@ -5,37 +5,396 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Find out with us what the bombing sites of Hiroshima and Nagasaki look like today, now that they've had enough time to heal from their tragedy">
-    <title>Hiroshima and Nagasaki | After the bombing</title>
-    <link rel="stylesheet" href="css/home.css">
+        content="Do you like old-school text-based roleplay games? The kind where you can die at any corner from wrong decisions? If yes then you're in the right place!">
+    <title>3̷̡̛͓̐ͅ&̴̜̑̕!̶̲͛̎#̴͚͒̏#̴͚̑̍3̷̢̠̟́̀̕w̴͎͈̳͑͊Ǘ̷̜͔͈̎̑ Rpg | A retro text-based Rpg</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="main.js" defer></script>
+    <link rel="shortcut icon" href="favicon-16x16.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <div id="content">
-        <header>
-            <h1>After the bombing</h1>
-            <p>Probably everyone knows the tragic story of Hiroshima and Nagasaki. In early August 1945, the United
-                States dropped two atomic bombs on Japan, devastating these two cities. More than 100,000 people ended
-                up dying either from direct exposure or the long-term side effects of radiation such as leukemia or
-                cancer.</p>
-            <p>However, as time passed, these cities started to 'heal' themselves, becoming once more the full of life
-                places they had been, serving as a reminder of the human ability to regenrate. Here's how the bomb sites
-                of these two cities look today.</p>
-        </header>
-        <div class="choice">
-            <div id="first">
-            <figure>
-            <img src="img/hiroshima.jpg" alt="">
-            <figcaption><a href="hiroshima.html">Hiroshima</a></figcaption</figure></div>
-            <div id="last"><figure>
-            <img src="img/nagasaki.jpg" alt="">
-            <figcaption><a href="nagasaki.html">Nagasaki</a></figcaption></figure></div>
-        </div>
-        <section id="three">
-            <p><a href="hibakujumoku.html">A-bombed trees</a></p>
-        </section>
-    </div>
+<body><!--To do: imgContainer filled, effect for winning?-->
+    <header>
+        <a id="icon" href="developer.html" class="button"></a>
+        <h1>3̷̡̛͓̐ͅ&̴̜̑̕!̶̲͛̎#̴͚͒̏#̴͚̑̍3̷̢̠̟́̀̕w̴͎͈̳͑͊Ǘ̷̜͔͈̎̑ Rpg</h1>
+    </header>
+    <nav class="navbar navbar-expand-sm bg-light">
 
+        <div class="container-fluid">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">3̷̡̛͓̐ͅ&̴̜̑̕!̶̲͛̎#̴͚͒̏#̴͚̑̍3̷̢̠̟́̀̕w̴͎͈̳͑͊Ǘ̷̜͔͈̎̑ Rpg</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="developer.html">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Placeholder</a>
+            </li>
+          </ul>
+        </div>
+      
+      </nav>
+    <div id="gameScreen" class="container">
+        <button id="prototype" style="display: none;">Generate</button>
+        <div id="imgContainer"><img src="img/plated_dragon1.png" alt=""></div>
+        <div id="textContainer">
+
+
+            <!--x-zero-->
+
+
+            <div class="situations" id="zero-zero">
+                <button class="secondPhaseTrigger">Start your adventure</button>
+                <p class="secondPhase">You are on a high mountainside, close to the top. You have nothing on you but the
+                    clothes on your
+                    back. Looking down all you see is the grass-covered foot of the mountain, rocky surfaces and a
+                    river. Good luck not only getting down alive but finding people who might help your lost self (Tip:
+                    You can move with the buttons below after pressing 'Continue')<button
+                        class="continueBtn">Continue</button></p>
+                <button class="thirdPhaseTriggerA" style="display: none !important;"></button>
+                <button class="thirdPhaseTriggerB" style="display: none !important;"></button>
+                <p class="thirdPhaseA" style="display: none !important;"></p>
+                <p class="thirdPhaseB" style="display: none !important;"></p>
+            </div>
+            <div class="situations" id="zero-one">
+                <p>The path is too steep here. You can't continue this way (unless you want to die a rather gruesome
+                    death, which you don't, believe me)<button class="continueBtn">Continue</button></p>
+            </div>
+            <div class="situations" class="forbidden" id="zero-two">
+                <p></p>
+            </div>
+            <div class="situations" class="forbidden" id="zero-three">
+                <p></p>
+            </div>
+            <div class="situations" class="forbidden" id="zero-four">
+                <p></p>
+            </div>
+            <div class="situations" id="zero-five">
+                <p>You see something glistening in the water. You lean down to see what it is.</p>
+                <button class="secondPhaseTrigger">Next</button>
+                <p class="secondPhase">Oh look! You found a (somewhat rusty) key! Seems like your little detour wasn't
+                    for nothing. Take it?</p>
+                <button class="thirdPhaseTriggerA">Yes</button>
+                <button class="thirdPhaseTriggerB">No</button>
+                <p class="thirdPhaseA">Good choice! It might prove to be useful later.<button
+                        class="continueBtn">Continue</button></p>
+                <p class="thirdPhaseB">Are you kidding? You have absolutely nothing on you! You're not in a position to
+                    be picky right now. Take the damned key!<button class="continueBtn">You take it</button></p>
+            </div>
+            <div class="situations" id="zero-six">
+                <p>Are you planning to climb back on the mountain? If yes, there are better, more traversable places for
+                    that.<button class="continueBtn">Continue</button></p>
+            </div>
+            <div class="situations" id="zero-seven">
+                <p>Seriously why are you walking this way? There's nothing here. Or are you going to drown
+                    yourself?<button class="continueBtn">Continue</button></p>
+            </div>
+
+            <!--x-one-->
+
+            <div class="situations" id="one-zero">
+                <p>You start to make your way down the southern part of the mountain (at least you assume it is the
+                    southern part). Soon you find yourself facing a huge drop. It's obvious that you can't continue in
+                    this direction.<button class="continueBtn">Continue</button></p>
+            </div>
+            <div class="situations" id="one-one">
+                <p>You climb down the somewhat-less-steep side of the mountain, careful not to slip and fall to your
+                    demise.<button class="continueBtn">Continue</button></p>
+            </div>
+            <div class="situations" class="forbidden" id="one-two">
+                <p></p>
+            </div>
+            <div class="situations" class="forbidden" id="one-three">
+                <p></p>
+            </div>
+            <div class="situations" class="forbidden" id="one-four">
+                <p></p>
+            </div>
+            <div class="situations" class="forbidden" id="one-five">
+                <p></p>
+            </div>
+            <div class="situations" class="forbidden" id="one-six">
+                <p></p>
+            </div>
+            <div class="situations" id="one-seven">
+                <p>You continue on regardless. You're knee-deep in the water now. Maybe you should turn back.<button
+                        class="continueBtn">Continue</button></p>
+            </div>
+
+
+            <!--x-two-->
+
+
+            <div class="situations" id="two-zero">
+                <p>You try going south anyway despite how dangerous it looks. You slip and die. Unexpected, isn't it? <button id="restart">Restart</button>
+                </p>
+            </div>
+            <div class="situations" id="two-one">
+                <p>You find yourself face-to-face with a sphinx. She tells you that if you can guess the answer
+                    correctly to the riddle she's going to tell you, she'll let you live. Graciously, she'll even give
+                    you not one but two chances to get it right (meaning you can answer incorrectly once).</p>
+                <button class="secondPhaseTrigger" id="riddleBtn">Let's hear her riddle</button>
+                <div class="secondPhase" class="qBlock">
+                    <div class="quote-wrapper">
+                        <article id="riddle"></article>
+                        <input type="text" id="userAnswer">
+                        <h3 id="answer" style="display: none;"></h3>
+                    </div>
+                    <button id="answerBtn">Answer</button>
+                </div>
+                <p id="answerCorrect">She looks surprised and a bit disappointed but, true to her word, lets you go.
+                    More accurately she leaves herself, flying south.<button class="continueBtn">Continue</button></p>
+                <button class="thirdPhaseTriggerA" style="display: none !important;"></button>
+                <button class="thirdPhaseTriggerB" style="display: none !important;"></button>
+                <p class="thirdPhaseA" style="display: none !important;"></p>
+                <p class="thirdPhaseB" style="display: none !important;"></p>
+            </div>
+            <div class="situations" id="two-two">
+                <p>There's nothing here apart from a few goats.<button class="continueBtn">Continue</button></p>
+            </div>
+            <div class="situations" class="forbidden" id="two-three">
+                <p></p>
+            </div>
+            <div class="situations" class="forbidden" id="two-four">
+                <p></p>
+            </div>
+            <div class="situations" class="forbidden" id="two-five">
+                <p></p>
+            </div>
+            <div class="situations" class="forbidden" id="two-six">
+                <p></p>
+            </div>
+            <div class="situations" id="two-seven">
+                <p>The surface you've been walking on is becoming scarce in this direction. You don't see anything but
+                    the ocean in the distance either.<button class="continueBtn">Continue</button></p>
+            </div>
+
+
+            <!--x-three-->
+
+
+            <div class="situations" class="forbidden" id="three-zero">
+                <p></p>
+            </div>
+            <div class="situations" id="three-one">
+                <p>You're on a slope leading down the mountain. There's nothing interesting here, you should keeping
+                    looking for a way out.<button class="continueBtn">Continue</button></p>
+            </div>
+            <div class="situations" id="three-two">
+                <p>Still nothing around.<button class="continueBtn">Continue</button></p>
+            </div>
+            <div class="situations" id="three-three">
+                <p>Your standing on the river's bank. It's too deep here to cross though. You'll have to find another
+                    way through.<button class="continueBtn">Continue</button></p>
+            </div>
+            <div class="situations" id="three-four">
+                <p></p>
+            </div>
+            <div class="situations" id="three-five">
+                <p></p>
+            </div>
+            <div class="situations" id="three-six">
+                <p></p>
+            </div>
+            <div class="situations" id="three-seven">
+                <p></p>
+            </div>
+
+
+            <!--x-four-->
+
+
+            <div class="situations" class="forbidden" id="four-zero">
+                <p></p>
+            </div>
+            <div class="situations" id="four-one">
+                <p></p>
+            </div>
+            <div class="situations" id="four-two">
+                <p>You see a brown rabbit. It also sees you, freezing. As you take a step towards it however, it
+                    flees.<button class="continueBtn">Continue</button></p>
+            </div>
+            <div class="situations" id="four-three">
+                <p></p>
+            </div>
+            <div class="situations" id="four-four">
+                <p>The river look somewhat shallow here compared to rest of it. This place is probably your best bet at
+                    crossing it.<button class="continueBtn">Continue</button></p>
+            </div>
+            <div class="situations" id="four-five">
+                <p></p>
+            </div>
+            <div class="situations" id="four-six">
+                <p></p>
+            </div>
+            <div class="situations" id="four-seven">
+                <p></p>
+            </div>
+
+
+            <!--x-five-->
+
+
+            <div class="situations" class="forbidden" id="five-zero">
+                <p></p>
+            </div>
+            <div class="situations" id="five-one">
+                <p></p>
+            </div>
+            <div class="situations" id="five-two">
+                <p>You see a berrybush in the distance.</p>
+                <button class="secondPhaseTrigger">Go closer</button>
+                <p class="secondPhase">Now that you're close enough to examine it properly, you see that these berries
+                    are deep blue in colour with small, ominious bloodred patches on them. Eat some?</p>
+                <button class="thirdPhaseTriggerA">Of course, you are quite hungry by now</button>
+                <button class="thirdPhaseTriggerB">No way! You want to live, thank you very much</button>
+                <p class="thirdPhaseA">You tenderly pick one, popping it into your mouth. It's really tasty! You eat
+                    some more to satisfy your hunger then decide it's time to move on (hopefully you won't end up
+                    keeling over later from this dubious decision of yours)<button class="continueBtn">Continue</button>
+                </p>
+                <p class="thirdPhaseB">You don't touch the berries. It's probably for the best.<button
+                        class="continueBtn">Continue</button></p>
+            </div>
+            <div class="situations" id="five-three">
+                <p></p>
+            </div>
+            <div class="situations" id="five-four">
+                <p></p>
+            </div>
+            <div class="situations" class="forbidden" id="five-five">
+                <p></p>
+            </div>
+            <div class="situations" id="five-six">
+                <p></p>
+            </div>
+            <div class="situations" id="five-seven">
+                <p></p>
+            </div>
+
+
+            <!--x-six-->
+
+
+            <div class="situations" class="forbidden" id="six-zero">
+                <p></p>
+            </div>
+            <div class="situations" id="six-one">
+                <p>With your luck, you end up running into the sphinx again. Maybe you shouldn't have followed in the
+                    direction she left. Anyway, here we go again.</p>
+                <button class="secondPhaseTrigger" id="riddleBtn1">Let's hear her riddle</button>
+                <div class="secondPhase" class="qBlock">
+                    <div class="quote-wrapper">
+                        <article id="riddle1"></article>
+                        <input type="text" id="userAnswer1">
+                        <h3 id="answer1" style="display: none;"></h3>
+                    </div>
+                    <button id="answerBtn1">Answer</button>
+                </div>
+                <p id="answerCorrect1">Now she looks not only disappointed but kinda angry too. More importantly, she's
+                    not moving an inch from where she's been perching. You decide it would be better to leave yourself.
+                    You start to slowly back away, not looking away from her. She also keeps watching you all the while,
+                    but you get away.<button class="continueBtn">Continue</button></p>
+                <button class="thirdPhaseTriggerA" style="display: none !important;"></button>
+                <button class="thirdPhaseTriggerB" style="display: none !important;"></button>
+                <p class="thirdPhaseA" style="display: none !important;"></p>
+                <p class="thirdPhaseB" style="display: none !important;"></p>
+            </div>
+            <div class="situations" id="six-two">
+                <p>There's nothing here.<button class="continueBtn">Continue</button></p>
+            </div>
+            <div class="situations" id="six-three">
+                <p></p>
+            </div>
+            <div class="situations" id="six-four">
+                <p></p>
+            </div>
+            <div class="situations" class="forbidden" id="six-five">
+                <p></p>
+            </div>
+            <div class="situations" class="forbidden" id="six-six">
+                <p></p>
+            </div>
+            <div class="situations" id="six-seven">
+                <p>You realise that you are standing right next to a gigantic dragon, only separated by the river. How
+                    comes you didn't notice it before?! Admittedly, it is a grey-blue colour like everything else around
+                    but still. Thank god it's asleep at least otherwise you would have become dinner already. Talking
+                    about dinner, it's getting a bit late. Maybe you should try to find that exit already.<button
+                        class="continueBtn">Continue</button></p>
+            </div>
+
+
+            <!--x-seven-->
+
+
+            <div class="situations" class="forbidden" id="seven-zero">
+                <p></p>
+            </div>
+            <div class="situations" class="forbidden" id="seven-one">
+                <p></p>
+            </div>
+            <div class="situations" id="seven-two">
+                <p></p>
+            </div>
+            <div class="situations" id="seven-three">
+                <p></p>
+            </div>
+            <div class="situations" id="seven-four">
+                <p></p>
+            </div>
+            <div class="situations" class="forbidden" id="seven-five">
+                <p></p>
+            </div>
+            <div class="situations" id="seven-six">
+                <p>You continue quietly sneaking away from the dragon and that's when you notice it in the distance. The
+                    silhouette of a village! You probably could have noticed it earlier but because of the dragon and
+                    chest you were a bit too occupied. You <s>won</s> did it! Congrats! (It's a shame you didn't
+                    get to open the chest though)</p>
+            </div>
+            <div class="situations" id="seven-seven">
+                <p>You find a glistening treasure chest!</p>
+                <button class="secondPhaseTrigger">Next</button>
+                <p class="secondPhase">Open it?</p>
+                <button class="thirdPhaseTriggerA">Yes</button>
+                <button class="thirdPhaseTriggerB">Just leave</button>
+                <p class="thirdPhaseA">You open the chest and find... a gorgeous but deadly-looking sword! Who puts a
+                    weapon in a treasure chest? You take it out but not a moment sooner do you see a huge shadow falling
+                    over you. Looks like the opening of the chest woke the dragon up. It shreds you to pieces so fast
+                    you don't even get to think of defending yourself with your newfound weapon.</p>
+                <p class="thirdPhaseB">You continue on. Though the only way forward is to the south-west because south
+                    from here the rocky surface seems to disappear in favour of the deep water.<button
+                        class="continueBtn">Continue</button></p>
+            </div>
+
+
+            <!--else-->
+
+            
+            <p id="riddleDeath">You died</p>
+            <p id="secondArrival">You've already been here. Nothing has changed since then. You're welcome to keep trying though, it's not MY time you're wasting after all.</p>
+        </div>
+    </div>
+    <div id="moveBtns">
+        <button id="up">Up</button>
+        <div id="downBtns">
+            <button id="left">Left</button>
+            <button id="down">Down</button>
+            <button id="right">Right</button>
+        </div>
+    </div>
+    <div id="game-container"></div>
+    <footer>
+        <ul id="socialLinks">
+            <li><a href="error.html"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="error.html"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="error.html"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+          </ul>
+        <p>&copy; 2024 3-sided Dice Games All Rights Reserved</p>
+    </footer>
 
 </body>
 
