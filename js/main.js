@@ -1,6 +1,3 @@
-//  JS To Do: riddle problem, extra restrictions, add hasKey class, delete secondArrival from prohibited moves
-// Other To Do: placeholder page, meta, developer pics, add e-mail or something, finish sits, styling, responsiveness
-
 window.onload = function () {
 	const gameHeight = 8;
 	const gameWidth = 8;
@@ -30,6 +27,9 @@ window.onload = function () {
 	const prototype = document.querySelector("#prototype");
 	const situations = document.querySelectorAll(".situations");
 	const secondArrival = document.querySelector("#secondArrival");
+	let hasKey = document.querySelector("#hasKey");
+	hasKey.disabled = true;
+	// Still can't get it to recognise existing forbidden class
 	situations[2].classList.add("forbidden");
 	situations[3].classList.add("forbidden");
 	situations[4].classList.add("forbidden");
@@ -44,6 +44,7 @@ window.onload = function () {
 	situations[22].classList.add("forbidden");
 	situations[24].classList.add("forbidden");
 	situations[32].classList.add("forbidden");
+	situations[36].classList.add("forbidden");
 	situations[40].classList.add("forbidden");
 	situations[45].classList.add("forbidden");
 	situations[48].classList.add("forbidden");
@@ -63,13 +64,14 @@ window.onload = function () {
 		} else {
 			situations[n].classList.add("pastSituation");
 			situations[n].classList.add("seenSituation");
+			upBtn.disabled = true;
+			leftBtn.disabled = true;
+			downBtn.disabled = true;
+			rightBtn.disabled = true;
 		}
+		situations[5].classList.contains("seenSituation") ? hasKey.disabled = false : null;
 		if (typeof prevSit === 'number') {situations[prevSit].classList.remove("seenSituation");}
 		prevSit = n;
-		/*upBtn.disabled = true;
-		leftBtn.disabled = true;
-		downBtn.disabled = true;
-		rightBtn.disabled = true;*/
 		}
 	}
 	
@@ -127,6 +129,8 @@ window.onload = function () {
 		let oldX;
 		let oldY;
 
+		const textContainer = document.querySelector("#textContainer");
+
 	function move(direction) {
 	    const playerDiv = document.querySelector(".grid-square.contains-player");
 	    playerDiv.classList.remove("contains-player");
@@ -140,9 +144,6 @@ window.onload = function () {
 	       	case "down": if (playerY < 7) {playerY++; break;} else {break;};
 	    }
 
-	    /*newPlayerDiv = gridSquares[(playerY * gameWidth) + playerX];
-	    newPlayerDiv.classList.add("contains-player");
-		oldPlayerDiv = newPlayerDiv;*/
 		if (situations[(playerY * gameWidth) + playerX].classList.contains("forbidden")) {
 			playerX = oldX;
 			playerY = oldY;
@@ -151,6 +152,7 @@ window.onload = function () {
 			newPlayerDiv.classList.add("contains-player");
 			oldX = playerX;
 			oldY = playerY;
+			textContainer.scrollTop = 0;
 		}
 
 	for(let i = 0; i < allBtns.length; i++) {
@@ -186,18 +188,12 @@ window.onload = function () {
 	  }
 
 	// Player Movement End
-
-
-
-	// playerX = 0 && playerY = 1 ? newPlayerDiv.backgroundColor("red") : newPlayerDiv.backgroundColor("green"); - not working
 }
 
 // Riddle Generator Start
 
 const riddle = document.querySelector("#riddle");
 const riddle1 = document.querySelector("#riddle1");
-const answer = document.querySelector("#answer");
-const answer1 = document.querySelector("#answer1");
 const userAnswer = document.querySelector("#userAnswer");
 const userAnswer1 = document.querySelector("#userAnswer1");
 const riddleBtn = document.querySelector("#riddleBtn");
@@ -235,7 +231,19 @@ const riddles = [
   },
   {
     riddle: "Poor people have it. Rich people need it. If you eat it you die. What is it?",
-    answer : ["nothing", "nothing."]
+    answer : ["nothing", "nothing."],
+  },
+  {
+    riddle: "I am an odd number. Take away a letter and I become even. What number am I?",
+    answer : ["seven", "seven."],
+  },
+  {
+    riddle: "Forward, I am heavy; backward, I am not. What am I?",
+    answer : ["ton", "a ton", "ton.", "a ton."],
+  },
+  {
+    riddle: "Where can you finish a book without finishing a sentence?",
+    answer : ["prison", "in prison", "in the prison", "prison.", "in prison.", "in the prison."],
   },
 ];
 
@@ -250,44 +258,56 @@ const rGenExtra = () => {
 
 let prevRand;
 
+let currentAnswers;
+
 const riddleGenerator = () => {
-  var randomNum = Math.floor(Math.random() * riddles.length);
-
-  while (randomNum === prevRand) {
-    randomNum = Math.floor(Math.random() * riddles.length);
-  }
-
-  if (userAnswer.classList.contains("reveal")) {
-  riddle.textContent = riddles[randomNum].riddle;
-  answer.textContent = riddles[randomNum].answer;
-  } else if (userAnswer1.classList.contains("reveal")) {
-  riddle1.textContent = riddles[randomNum].riddle;
-  answer1.textContent = riddles[randomNum].answer;
-  }
-
-  prevRand = randomNum;
-};
+	var randomNum = Math.floor(Math.random() * riddles.length);
+  
+	while (randomNum === prevRand) {
+	  randomNum = Math.floor(Math.random() * riddles.length);
+	}
+  
+	if (userAnswer.classList.contains("reveal")) {
+	riddle.textContent = riddles[randomNum].riddle;
+	} else if (userAnswer1.classList.contains("reveal")) {
+	riddle1.textContent = riddles[randomNum].riddle;
+	}
+	currentAnswers = riddles[randomNum].answer;
+  
+	prevRand = randomNum;
+  };
 
 const answerChecker = () => {
-  if ((answer.textContent).includes(userAnswer.value.toLowerCase())) { // accepts "a" as well, problem!!!!
-	answerCorrect.classList.add("reveal");
-  } else if (answerBtn.classList.contains("warning")) {
-	riddleDeath.classList.add("reveal");
-  } else {
-    alert("You answered incorrectly. Careful now, this is your last chance!");
-	answerBtn.classList.add("warning");
+	for (let i = 0; i < currentAnswers.length; i++) {
+	  if (userAnswer.value.toLowerCase() === currentAnswers[i]) {
+	  answerCorrect.classList.add("reveal");
+	  }
+	}
+
+	if (answerCorrect.classList.contains("reveal")) {
+		null;
+	} else if (answerBtn.classList.contains("warning")) {
+	  riddleDeath.classList.add("reveal");
+	} else {
+	  alert("You answered incorrectly. Careful now, this is your last chance!");
+	  answerBtn.classList.add("warning");
+	}
   }
 
-}
+  const answerChecker1 = () => {
+	for (let i = 0; i < currentAnswers.length; i++) {
+	  if (userAnswer1.value.toLowerCase() === currentAnswers[i]) {
+	  answerCorrect1.classList.add("reveal");
+	  }
+	}
 
-const answerChecker1 = () => {
-  if ((answer1.textContent).includes(userAnswer1.value.toLowerCase())) { // accepts "a" as well, problem!!!!
-	answerCorrect1.classList.add("reveal");
-  } else {
-	riddleDeath.classList.add("reveal");
+	if (answerCorrect1.classList.contains("reveal")) {
+	  null;
+	} else {
+	  riddleDeath.classList.add("reveal");
+	}
+  
   }
-
-}
 
 riddleBtn.addEventListener("click", rGenExtra);
 riddleBtn.addEventListener("click", riddleGenerator);
@@ -298,16 +318,17 @@ answerBtn1.addEventListener("click", answerChecker1);
 
 // Riddle Generator End
 
+// Game Restart Start
+
 const restart = document.querySelector("#restart");
+const glitch = document.querySelector("#glitchContainer");
 
 restart.addEventListener("click", restartGame);
+glitch.addEventListener("click", restartGame);
 
 function restartGame () {
-if (sessionStorage.getItem('reloaded')) {
-	console.log('Page has already been reloaded');
-  } else {
-	// Perform the page reload
 	sessionStorage.setItem('reloaded', true);
 	window.location.reload();
-  }
 }
+
+// Game Restart End

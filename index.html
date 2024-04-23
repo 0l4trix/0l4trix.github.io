@@ -7,41 +7,36 @@
     <meta name="description"
         content="Do you like old-school text-based roleplay games? The kind where you can die at any corner from wrong decisions? If yes then you're in the right place!">
     <title>3̷̡̛͓̐ͅ&̴̜̑̕!̶̲͛̎#̴͚͒̏#̴͚̑̍3̷̢̠̟́̀̕w̴͎͈̳͑͊Ǘ̷̜͔͈̎̑ Rpg | A retro text-based Rpg</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/styleMain.css">
+    <script src="js/main.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="main.js" defer></script>
     <link rel="shortcut icon" href="favicon-16x16.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
-<body><!--To do: imgContainer filled, effect for winning?-->
+<body>
     <header>
         <a id="icon" href="developer.html" class="button"></a>
         <h1>3̷̡̛͓̐ͅ&̴̜̑̕!̶̲͛̎#̴͚͒̏#̴͚̑̍3̷̢̠̟́̀̕w̴͎͈̳͑͊Ǘ̷̜͔͈̎̑ Rpg</h1>
     </header>
-    <nav class="navbar navbar-expand-sm bg-light">
-
-        <div class="container-fluid">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">3̷̡̛͓̐ͅ&̴̜̑̕!̶̲͛̎#̴͚͒̏#̴͚̑̍3̷̢̠̟́̀̕w̴͎͈̳͑͊Ǘ̷̜͔͈̎̑ Rpg</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="developer.html">About us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Placeholder</a>
-            </li>
-          </ul>
+    <nav>
+        <div class="navbar">
+            <ul>
+                <li><a href="index.html">3̷̡̛͓̐ͅ&̴̜̑̕!̶̲͛̎#̴͚͒̏#̴͚̑̍3̷̢̠̟́̀̕w̴͎͈̳͑͊Ǘ̷̜͔͈̎̑ Rpg</a></li>
+                <li><a href="cyverse.html">Cyverse</a></li>
+                <li><a href="developer.html">About us</a></li>
+            </ul>
         </div>
-      
-      </nav>
-    <div id="gameScreen" class="container">
+    </nav>
+    <div id="gameScreen">
         <button id="prototype" style="display: none;">Generate</button>
-        <div id="imgContainer"><img src="img/plated_dragon1.png" alt=""></div>
+        <div id="imgContainer">
+            <div id="game-container"></div>
+        </div>
         <div id="textContainer">
 
 
@@ -53,8 +48,8 @@
                 <p class="secondPhase">You are on a high mountainside, close to the top. You have nothing on you but the
                     clothes on your
                     back. Looking down all you see is the grass-covered foot of the mountain, rocky surfaces and a
-                    river. Good luck not only getting down alive but finding people who might help your lost self (Tip:
-                    You can move with the buttons below after pressing 'Continue')<button
+                    river. Good luck not only getting down alive but finding people who might help your lost self. (Tip:
+                    You can move with the direction buttons after pressing 'Continue')<button
                         class="continueBtn">Continue</button></p>
                 <button class="thirdPhaseTriggerA" style="display: none !important;"></button>
                 <button class="thirdPhaseTriggerB" style="display: none !important;"></button>
@@ -62,8 +57,7 @@
                 <p class="thirdPhaseB" style="display: none !important;"></p>
             </div>
             <div class="situations" id="zero-one">
-                <p>The path is too steep here. You can't continue this way (unless you want to die a rather gruesome
-                    death, which you don't, believe me)<button class="continueBtn">Continue</button></p>
+                <p>The path is pretty steep here. It would probably be smarter to look for another way down. It's up to you though.<button class="continueBtn">Continue</button></p>
             </div>
             <div class="situations" class="forbidden" id="zero-two">
                 <p></p>
@@ -98,12 +92,13 @@
             <!--x-one-->
 
             <div class="situations" id="one-zero">
-                <p>You start to make your way down the southern part of the mountain (at least you assume it is the
-                    southern part). Soon you find yourself facing a huge drop. It's obvious that you can't continue in
-                    this direction.<button class="continueBtn">Continue</button></p>
+                <p>You start to make your way down the southern part of the mountain - at least you assume it is the
+                    southern part. Soon you find yourself facing a huge drop. It's obvious that you can't continue in
+                    this direction (unless you want to die a rather gruesome
+                    death, which you don't, believe me).<button class="continueBtn">Continue</button></p>
             </div>
             <div class="situations" id="one-one">
-                <p>You climb down the somewhat-less-steep side of the mountain, careful not to slip and fall to your
+                <p>You climb down on one of the somewhat-less-steep part of the mountain, careful not to slip and fall to your
                     demise.<button class="continueBtn">Continue</button></p>
             </div>
             <div class="situations" class="forbidden" id="one-two">
@@ -131,7 +126,8 @@
 
 
             <div class="situations" id="two-zero">
-                <p>You try going south anyway despite how dangerous it looks. You slip and die. Unexpected, isn't it? <button id="restart">Restart</button>
+                <p>You try going south anyway despite how dangerous it looks. You slip and die. Only your mangled corpse remains. Unexpected, isn't it?
+                    <button id="restart">Restart</button>
                 </p>
             </div>
             <div class="situations" id="two-one">
@@ -143,7 +139,6 @@
                     <div class="quote-wrapper">
                         <article id="riddle"></article>
                         <input type="text" id="userAnswer">
-                        <h3 id="answer" style="display: none;"></h3>
                     </div>
                     <button id="answerBtn">Answer</button>
                 </div>
@@ -155,7 +150,8 @@
                 <p class="thirdPhaseB" style="display: none !important;"></p>
             </div>
             <div class="situations" id="two-two">
-                <p>There's nothing here apart from a few goats.<button class="continueBtn">Continue</button></p>
+                <p>There's nothing here apart from a few goats. They don't look too happy about your presence. Better
+                    leave them alone.<button class="continueBtn">Continue</button></p>
             </div>
             <div class="situations" class="forbidden" id="two-three">
                 <p></p>
@@ -189,20 +185,28 @@
                 <p>Still nothing around.<button class="continueBtn">Continue</button></p>
             </div>
             <div class="situations" id="three-three">
-                <p>Your standing on the river's bank. It's too deep here to cross though. You'll have to find another
-                    way through.<button class="continueBtn">Continue</button></p>
+                <p>The river look somewhat shallow here compared to rest of it. This place is probably your best bet at
+                    crossing it.<button class="continueBtn">Continue</button></p>
             </div>
             <div class="situations" id="three-four">
-                <p></p>
+                <p>You trudge through the chest-deep water. You needed a bath anyway. I just didn't want to mention it
+                    before (you know, to not insult your feelings and all).<button class="continueBtn">Continue</button></p>
             </div>
             <div class="situations" id="three-five">
-                <p></p>
+                <p>The ground is slightly uneven, causing you to stumble for a moment before regaining your balance. Or
+                    maybe you're just clumsy.<button class="continueBtn">Continue</button></p>
             </div>
             <div class="situations" id="three-six">
-                <p></p>
+                <p>Row, row, row your boat, gently down the stream. Merrily, merrily, merrily, merrily, life is but a dream.</p>
+                <button class="secondPhaseTrigger">?</button>
+                <p class="secondPhase">Oh, don't mind me! I'm just bored out of my mind. Go on, keep searching.<button class="continueBtn">Continue</button></p>
+                <button class="thirdPhaseTriggerA" style="display: none !important;"></button>
+                <button class="thirdPhaseTriggerB" style="display: none !important;"></button>
+                <p class="thirdPhaseA" style="display: none !important;"></p>
+                <p class="thirdPhaseB" style="display: none !important;"></p>
             </div>
             <div class="situations" id="three-seven">
-                <p></p>
+                <p>You see nothing but the ocean both to the north and east.<button class="continueBtn">Continue</button></p>
             </div>
 
 
@@ -213,27 +217,29 @@
                 <p></p>
             </div>
             <div class="situations" id="four-one">
-                <p></p>
+                <p>You feel a slight breeze bringing with it the scent of wildflowers and the sound of rustling leaves.
+                    Under better circumstances you would probably be tempted to just sit down and enjoy the place.<button class="continueBtn">Continue</button></p>
             </div>
             <div class="situations" id="four-two">
                 <p>You see a brown rabbit. It also sees you, freezing. As you take a step towards it however, it
                     flees.<button class="continueBtn">Continue</button></p>
             </div>
             <div class="situations" id="four-three">
-                <p></p>
+                <p>Your standing on the river's bank. It's too deep here to cross though. You'll have to find another
+                    way through.<button class="continueBtn">Continue</button></p>
             </div>
-            <div class="situations" id="four-four">
-                <p>The river look somewhat shallow here compared to rest of it. This place is probably your best bet at
-                    crossing it.<button class="continueBtn">Continue</button></p>
+            <div class="situations" class="forbidden" id="four-four">
+                <p></p>
             </div>
             <div class="situations" id="four-five">
-                <p></p>
+                <p>A gentle ray of sunlight breaks through the clouds and shines down on you, warming you up. Don't get
+                    too comfortable, though. You're still not in the clear.<button class="continueBtn">Continue</button></p>
             </div>
             <div class="situations" id="four-six">
-                <p></p>
+                <p>You stumble upon a pile of bones. You immediately decide it's better not to linger around.<button class="continueBtn">Continue</button></p>
             </div>
             <div class="situations" id="four-seven">
-                <p></p>
+                <p>...zzz...<button class="continueBtn">Continue</button></p>
             </div>
 
 
@@ -244,7 +250,7 @@
                 <p></p>
             </div>
             <div class="situations" id="five-one">
-                <p></p>
+                <p>You catch a glimpse of a small insect scurrying away.<button class="continueBtn">Continue</button></p>
             </div>
             <div class="situations" id="five-two">
                 <p>You see a berrybush in the distance.</p>
@@ -261,19 +267,23 @@
                         class="continueBtn">Continue</button></p>
             </div>
             <div class="situations" id="five-three">
-                <p></p>
+                <p>Just keep searching. I need some time to come up with more quips.<button
+                        class="continueBtn">Continue</button></p>
             </div>
             <div class="situations" id="five-four">
-                <p></p>
+                <p>The river is right next to you, but it's too deep to cross. Try elsewhere maybe?<button
+                        class="continueBtn">Continue</button></p>
             </div>
             <div class="situations" class="forbidden" id="five-five">
                 <p></p>
             </div>
             <div class="situations" id="five-six">
-                <p></p>
+                <p>You notice a small flower growing out of a crack in the ground, adding a touch of color to the
+                    otherwise plain surface.<button class="continueBtn">Continue</button></p>
             </div>
             <div class="situations" id="five-seven">
-                <p></p>
+                <p>The ground under you feels surprisingly smooth, as if it had been worn down by many feet travelling
+                    upon it. You hope that's a good sign.<button class="continueBtn">Continue</button></p>
             </div>
 
 
@@ -308,10 +318,12 @@
                 <p>There's nothing here.<button class="continueBtn">Continue</button></p>
             </div>
             <div class="situations" id="six-three">
-                <p></p>
+                <p>Nothing here either. I'm kinda getting bored. Hurry it up, will you?<button
+                        class="continueBtn">Continue</button></p>
             </div>
             <div class="situations" id="six-four">
-                <p></p>
+                <p>You wish you could just cross over to the other bank, but it seems impossible at this place.<button
+                        class="continueBtn">Continue</button></p>
             </div>
             <div class="situations" class="forbidden" id="six-five">
                 <p></p>
@@ -338,13 +350,18 @@
                 <p></p>
             </div>
             <div class="situations" id="seven-two">
-                <p></p>
+                <p>Your way is blocked by the mountain both to the west and south.<button
+                        class="continueBtn">Continue</button></p>
             </div>
             <div class="situations" id="seven-three">
-                <p></p>
+                <p>There's no way to climb the mountainside in the south. Look for another way or stay in hopes of a
+                    miracle (a heads up though: we don't have much of that around here).<button
+                        class="continueBtn">Continue</button></p>
             </div>
             <div class="situations" id="seven-four">
-                <p></p>
+                <p>To the east is a rather deep part of the river, to the south the continuation of the mountain you
+                    just descended from. Neither is traversable (until you learn to fly, that is).<button
+                        class="continueBtn">Continue</button></p>
             </div>
             <div class="situations" class="forbidden" id="seven-five">
                 <p></p>
@@ -353,15 +370,20 @@
                 <p>You continue quietly sneaking away from the dragon and that's when you notice it in the distance. The
                     silhouette of a village! You probably could have noticed it earlier but because of the dragon and
                     chest you were a bit too occupied. You <s>won</s> did it! Congrats! (It's a shame you didn't
-                    get to open the chest though)</p>
+                    get to open the chest though.)</p>
+                <div id="glitchContainer">
+                    <p class="glitch">Play again?</p>
+                    <p class="glitch">Play again?</p>
+                    <p class="glitch">Play again?</p>
+                </div>
             </div>
             <div class="situations" id="seven-seven">
                 <p>You find a glistening treasure chest!</p>
                 <button class="secondPhaseTrigger">Next</button>
                 <p class="secondPhase">Open it?</p>
-                <button class="thirdPhaseTriggerA">Yes</button>
+                <button class="thirdPhaseTriggerA" id="hasKey">Yes</button>
                 <button class="thirdPhaseTriggerB">Just leave</button>
-                <p class="thirdPhaseA">You open the chest and find... a gorgeous but deadly-looking sword! Who puts a
+                <p class="thirdPhaseA">You open the chest and find... a beautiful but deadly-looking sword! Who puts a
                     weapon in a treasure chest? You take it out but not a moment sooner do you see a huge shadow falling
                     over you. Looks like the opening of the chest woke the dragon up. It shreds you to pieces so fast
                     you don't even get to think of defending yourself with your newfound weapon.</p>
@@ -373,26 +395,26 @@
 
             <!--else-->
 
-            
-            <p id="riddleDeath">You died</p>
-            <p id="secondArrival">You've already been here. Nothing has changed since then. You're welcome to keep trying though, it's not MY time you're wasting after all.</p>
+
+            <p id="riddleDeath">You died. Congrats! How many does this make?<button id="restart">Restart</button></p>
+            <p id="secondArrival">You've already been here. Nothing has changed since then. You're welcome to keep
+                trying though, it's not MY time you're wasting after all.</p>
         </div>
     </div>
     <div id="moveBtns">
-        <button id="up">Up</button>
+        <button class="button" id="up">Up</button>
         <div id="downBtns">
-            <button id="left">Left</button>
-            <button id="down">Down</button>
-            <button id="right">Right</button>
+            <button class="button" id="left">Left</button>
+            <button class="button" id="down">Down</button>
+            <button class="button" id="right">Right</button>
         </div>
     </div>
-    <div id="game-container"></div>
     <footer>
         <ul id="socialLinks">
             <li><a href="error.html"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
             <li><a href="error.html"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
             <li><a href="error.html"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-          </ul>
+        </ul>
         <p>&copy; 2024 3-sided Dice Games All Rights Reserved</p>
     </footer>
 
