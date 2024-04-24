@@ -1,3 +1,4 @@
+// responsive form, nav
 window.onload = function () {
 	const gameHeight = 8;
 	const gameWidth = 8;
@@ -27,6 +28,7 @@ window.onload = function () {
 	const prototype = document.querySelector("#prototype");
 	const situations = document.querySelectorAll(".situations");
 	const secondArrival = document.querySelector("#secondArrival");
+	const forbiddenMove = document.querySelector("#forbiddenMove");
 	let hasKey = document.querySelector("#hasKey");
 	hasKey.disabled = true;
 	// Still can't get it to recognise existing forbidden class
@@ -59,8 +61,9 @@ window.onload = function () {
 		return function() {
 		let n = (playerY * gameWidth) + playerX;
 		secondArrival.classList.contains("seenSituation") ? secondArrival.classList.remove("seenSituation") : null;
+		forbiddenMove.classList.contains("seenSituation") ? forbiddenMove.classList.remove("seenSituation") : null;
 		if (situations[n].classList.contains("pastSituation")) {
-			secondArrival.classList.add("seenSituation");
+			prevSit === n ? forbiddenMove.classList.add("seenSituation") : secondArrival.classList.add("seenSituation");
 		} else {
 			situations[n].classList.add("pastSituation");
 			situations[n].classList.add("seenSituation");

@@ -353,6 +353,12 @@ ul#socialLinks {
 
   /* Responsiveness Start */
 
+  @media screen and (max-width: 950px) {
+	div#questions {
+		width: 70%;
+	}
+  }
+
   @media screen and (max-width: 800px) {
 	a#icon {
 		height: 8vw;
@@ -383,6 +389,14 @@ ul#socialLinks {
 		flex-direction: column;
 		margin: 0.5em;
 	}
+
+	div.navbar li {
+		padding: 3px;
+	}
+
+	div#questions {
+		width: 95%;
+	}
   }
 
   @media screen and (max-width: 400px) {
@@ -400,17 +414,23 @@ ul#socialLinks {
 		width: 90%;
 	}
 
-	div#textContainer {
-		max-height: 100vw;
+	.prevSlide,
+	.nextSlide {
+		bottom: 15%;
+		padding: 10px;
+		font-size: 14px;
+		border-radius: 3px;
+ 	 }
+  }
+
+  @media screen and (max-width: 300px) {
+	textarea#comment {
+		width: 80%;
 	}
 
-.prevSlide,
-.nextSlide {
-	bottom: 15%;
-	padding: 10px;
-	font-size: 14px;
-	border-radius: 3px;
-  }
+	select#deathCount {
+		width: 80%;
+	}
   }
 
   /* Responsiveness End */

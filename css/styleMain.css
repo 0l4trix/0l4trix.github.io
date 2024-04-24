@@ -161,7 +161,8 @@ input#userAnswer1,
 p#answerCorrect,
 p#answerCorrect1,
 p#riddleDeath,
-p#secondArrival {
+p#secondArrival,
+p#forbiddenMove {
 	display: none;
 }
 
@@ -461,7 +462,7 @@ ul#socialLinks {
 	}
 
 	div#textContainer {
-		max-height: 100vw;
+		max-height: 300px;
 	}
 
 	:root {
