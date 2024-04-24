@@ -444,6 +444,10 @@ ul#socialLinks {
 		flex-direction: column;
 		margin: 0.5em;
 	}
+
+	div.navbar li {
+		padding: 3px;
+	}
   }
 
   @media screen and (max-width: 450px) {
