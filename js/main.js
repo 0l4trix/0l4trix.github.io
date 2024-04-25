@@ -1,4 +1,3 @@
-// responsive form, nav
 window.onload = function () {
 	const gameHeight = 8;
 	const gameWidth = 8;
@@ -29,6 +28,7 @@ window.onload = function () {
 	const situations = document.querySelectorAll(".situations");
 	const secondArrival = document.querySelector("#secondArrival");
 	const forbiddenMove = document.querySelector("#forbiddenMove");
+	const sphinxDeath = document.querySelector("#sphinxDeath");
 	let hasKey = document.querySelector("#hasKey");
 	hasKey.disabled = true;
 	// Still can't get it to recognise existing forbidden class
@@ -63,7 +63,13 @@ window.onload = function () {
 		secondArrival.classList.contains("seenSituation") ? secondArrival.classList.remove("seenSituation") : null;
 		forbiddenMove.classList.contains("seenSituation") ? forbiddenMove.classList.remove("seenSituation") : null;
 		if (situations[n].classList.contains("pastSituation")) {
-			prevSit === n ? forbiddenMove.classList.add("seenSituation") : secondArrival.classList.add("seenSituation");
+			if (prevSit === n) {
+				forbiddenMove.classList.add("seenSituation")
+			} else if (n === 49) {
+				sphinxDeath.classList.add("seenSituation");
+			} else {
+				secondArrival.classList.add("seenSituation");
+			}
 		} else {
 			situations[n].classList.add("pastSituation");
 			situations[n].classList.add("seenSituation");
@@ -323,10 +329,11 @@ answerBtn1.addEventListener("click", answerChecker1);
 
 // Game Restart Start
 
-const restart = document.querySelector("#restart");
+const restart = document.querySelectorAll(".restart");
 const glitch = document.querySelector("#glitchContainer");
 
-restart.addEventListener("click", restartGame);
+for (let i = 0; i < restart.length; i++) {
+restart[i].addEventListener("click", restartGame);}
 glitch.addEventListener("click", restartGame);
 
 function restartGame () {

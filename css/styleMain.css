@@ -142,7 +142,8 @@ div.situations {
 	padding: 10px;
 }
 
-div.situations * {
+div.situations *,
+button.restart {
 	margin: auto;
 }
 
@@ -162,7 +163,8 @@ p#answerCorrect,
 p#answerCorrect1,
 p#riddleDeath,
 p#secondArrival,
-p#forbiddenMove {
+p#forbiddenMove,
+p#sphinxDeath {
 	display: none;
 }
 
@@ -174,7 +176,8 @@ p#forbiddenMove {
 	display: block !important;
 }
 
-div.situations button {
+div.situations button,
+button.restart {
 	margin-top: 1em;
 }
 
