@@ -1,7 +1,7 @@
 import * as hairdresser from '../models/hairdresser.js';
 
-const apiHairdressers = 'http://salonsapi.prooktatas.hu/api/hairdressers';
-const apiAppointments = 'http://salonsapi.prooktatas.hu/api/appointments';
+const apiHairdressers = 'https://salonsapi.prooktatas.hu/api/hairdressers';
+const apiAppointments = 'https://salonsapi.prooktatas.hu/api/appointments';
 
 async function getHairdressers() {
     const response = await fetch(apiHairdressers)
