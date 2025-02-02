@@ -15,7 +15,7 @@ async function getHairdressers() {
 
     let allHairdressers = [];
     for (const element of data) {
-        let img = `${element.id}.jpg`;
+        let img = `https://0l4trix.github.io/Javascript/img/${element.id}.jpg`;
         await fetch('https://0l4trix.github.io/Javascript/data/intros.json')
             .then(res => res.json())
             .then(data => {
