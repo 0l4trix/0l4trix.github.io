@@ -1,0 +1,43 @@
+[
+    {
+        "id": "6",
+        "profession": "Fodrász, hajszobrász",
+        "text": "Anna 5 éve dolgozik fodrászként, és különösen a női frizurák terén szerzett nagy tapasztalatot. Anna számára a legfontosabb, hogy ügyfelei elégedettek legyenek, ezért mindig figyelmesen hallgatja meg kéréseiket. Szívesen osztja meg tudását a hajápolásról, és szívesen ad tanácsokat a legjobb termékekről is."
+    },
+    {
+        "id": "7",
+        "profession": "Fodrász",
+        "text": "Lajos a férfi fodrászat specialistája, aki több mint 6 éve dolgozik a szakmában. Szereti a klasszikus és modern hajvágásokat, és mindig figyel a részletekre. Lajos célja, hogy minden vendége stílusának és személyiségének megfelelő frizurát kapjon. Barátságos hozzáállása és szaktudása miatt sokan visszatérnek hozzá."
+    },
+    {
+        "id": "8",
+        "profession": "Vezető fodrász",
+        "text": "Tamás több mint 9 éve van a fodrász szakmában, és a folyamatos fejlődés híve. Szereti a kihívásokat, és mindig készen áll új technikák elsajátítására. Tamás különösen a férfi frizurák terén van otthon, és célja, hogy minden vendég számára egyedi és stílusos megjelenést biztosítson."
+    },
+    {
+        "id": "9",
+        "profession": "Fodrász, borbély",
+        "text": "Judit a férfi fodrászatban eltöltött 5 éve alatt számos stílust elsajátított. Szereti a klasszikus borbélyformákat és a modern, éles vonalakat. Judit mindig figyel a vendégei személyes stílusára, és arra törekszik, hogy mindenki megtalálja a hozzá legjobban illő frizurát."
+    },
+    {
+        "id": "10",
+        "profession": "Fodrász",
+        "text": "Éva 4 éve dolgozik fodrászként, és azóta is szenvedéllyel végzi munkáját. Különösen szereti a kreatív frizurákat és a különleges alkalmakra készült hajkölteményeket. Éva mindig figyel az apró részletekre, és szívesen segít a vendégeknek a megfelelő hajápolási rutin kialakításában."
+    },
+    {
+        "id": "11",
+        "profession": "Fodrász",
+        "text": "Péter a fodrászat világába 7 éve lépett be, és azóta is elkötelezett a folyamatos fejlődés mellett. Különösen érdekli a nemzetközi hajvágási trendek, és rendszeresen részt vesz szakmai továbbképzéseken. Péter célja, hogy minden vendég magabiztosan és elégedetten távozzon a szalonból."
+    },
+    {
+        "id": "12",
+        "profession": "Fodrász, hajszobrász",
+        "text": "Zsófi több mint 8 éve dolgozik fodrászként, és szenvedélye a hajformázás minden formája. Különösen kedveli a balayage technikát, és mindig naprakész a legújabb trendekkel. Anna hisz abban, hogy a hajvágás nem csupán szakmai munka, hanem művészi kifejezés is. Ügyfeleit mindig barátságosan fogadja, és igyekszik mindenki számára a legjobb élményt nyújtani."
+    },
+    {
+        "id": "13",
+        "profession": "Vezető fodrász",
+        "text": "Dani a fodrász szakmában eltöltött 10 éve alatt számos technikát elsajátított, a klasszikus frizuráktól kezdve a modern stílusokig. Célja, hogy minden ügyfelének a legmegfelelőbb frizurát ajánlja, figyelembe véve az arcformáját és a hajtípusát. Dani kedvenc időtöltése a különböző hajszínek kísérletezése, így mindig izgalmas új ötletekkel várja vendégeit."
+    }
+]
+

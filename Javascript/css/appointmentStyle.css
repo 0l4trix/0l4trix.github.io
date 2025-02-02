@@ -1,0 +1,25 @@
+div#main div.box {
+    height: 600px;
+    width: 600px;
+}
+
+div#outer{
+    top: 10%;
+}
+
+input{
+    margin: 20px auto;
+}
+
+div#data{
+    margin: 20px;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+div#data p{
+    margin-bottom: 15px;
+}
+button{
+    margin: 5px;
+}

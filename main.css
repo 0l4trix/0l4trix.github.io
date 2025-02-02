@@ -6,11 +6,13 @@
     */
     --hue: 360; /* change me (0-360) */
     --hue-adjust: 110; /* and me */
-    --hue-2: calc(var(--hue) + var(--hue-adjust));
+    --hueNew: calc(var(--hue) + var(--hue-adjust));
 
-    --hueNew: 300; /* change me (0-360) */
-    --hueNew-adjust: 110; /* and me */
-    --hueNew-2: calc(var(--hueNew) + var(--hueNew-adjust));
+    --hue2: 300; /* change me (0-360) */
+    --hueNew2: calc(var(--hue2) + var(--hue-adjust));
+
+    --hue3: 200; /* change me (0-360) */
+    --hueNew3: calc(var(--hue3) + var(--hue-adjust));
   }
   a{
     text-decoration: none;
@@ -20,22 +22,33 @@
     --text-base: oklch(45% 0.175 var(--hue));
     --text-hover: oklch(95% 0.145 calc(var(--hue) + 30));
   
-    --shadow-start: oklch(95% 0.145 var(--hue-2));
+    --shadow-start: oklch(95% 0.145 var(--hueNew));
     --shadow-end: oklch(60% 0.29 var(--hue));
   
     /* No color function, so we can use different opacity values */
     --shadow-inner: 60% 0.29 var(--hue);
   }
   button#second{
-    --button-background: oklch(20% 0.0666 var(--hueNew));
-    --text-base: oklch(45% 0.175 var(--hueNew));
-    --text-hover: oklch(95% 0.145 calc(var(--hueNew) + 30));
+    --button-background: oklch(20% 0.0666 var(--hue2));
+    --text-base: oklch(45% 0.175 var(--hue2));
+    --text-hover: oklch(95% 0.145 calc(var(--hue2) + 30));
   
-    --shadow-start: oklch(95% 0.145 var(--hueNew-2));
-    --shadow-end: oklch(60% 0.29 var(--hueNew));
+    --shadow-start: oklch(95% 0.145 var(--hueNew2));
+    --shadow-end: oklch(60% 0.29 var(--hue2));
   
     /* No color function, so we can use different opacity values */
-    --shadow-inner: 60% 0.29 var(--hueNew);
+    --shadow-inner: 60% 0.29 var(--hue2);
+  }
+  button#third{
+    --button-background: oklch(20% 0.0666 var(--hue3));
+    --text-base: oklch(45% 0.175 var(--hue3));
+    --text-hover: oklch(95% 0.145 calc(var(--hue3) + 30));
+  
+    --shadow-start: oklch(95% 0.145 var(--hueNew3));
+    --shadow-end: oklch(60% 0.29 var(--hue3));
+  
+    /* No color function, so we can use different opacity values */
+    --shadow-inner: 60% 0.29 var(--hue3);
   }
   button {
     all: unset;

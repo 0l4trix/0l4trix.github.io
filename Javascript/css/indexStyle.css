@@ -1,0 +1,51 @@
+div#main div.box {
+    height: 420px;
+    width: 280px;
+    cursor: pointer;
+}
+
+div#main div.box:hover {
+    top: -5px;
+}
+
+div.img {
+    height: 220px;
+    width: 220px;
+    margin-top: 30px;
+    border-radius: 15%;
+    background-color: grey;
+    box-shadow: 2px 2px 7px 1px #323232;
+}
+
+div#main h2 {
+    position: relative;
+    top: -25px;
+}
+
+div#main h4{
+    position: relative;
+    top: -8px;
+}
+
+div#main h5 {
+    width: 70%;
+    padding: 8px;
+    border-top: 1px solid black;
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+}
+
+div#outer{
+    top: 25%;
+}
+
+input,
+select {
+    margin-bottom: 20px;
+}
+
+button {
+    margin: 8px 0 0 8px;
+    float: right;
+}

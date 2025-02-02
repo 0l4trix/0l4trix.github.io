@@ -1,0 +1,152 @@
+:root{
+    --color1: #D6CFB4;
+    --color2: #FFF8E6;
+    --color3: #eee;
+
+    --borderColor1: #BBAB8C;
+
+    --btnColor1: #A67B5B;
+    --btnColor2: #6F4E37;
+}
+
+* {
+    text-align: center;
+    margin: auto;
+    text-decoration: none;
+}
+
+body{
+    background-image: url(../img/bg.jpg);
+}
+
+.hidden{
+    display: none !important;
+}
+
+.header{
+    width: 100%;
+    height: 55px;
+    color: black;
+    background-color: var(--color3);
+    font-size: larger;
+    position: relative;
+    top: -5px;
+    border-radius: 0px 0px 25px 25px;
+    box-shadow: 2px 2px 7px 1px #323232;
+}
+
+.header:hover{
+    color: var(--btnColor2);
+    top: 0;
+}
+
+.header, div#main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+div#main div.box {
+    margin: 15px;
+    padding: 5px;
+    border-radius: 35px;
+    background-color: var(--color3);
+    box-shadow: 2px 2px 7px 1px #323232;
+    position: relative;
+}
+
+div#main h2 {
+    display: block;
+    width: 175px;
+    padding: 5px;
+    border-radius: 20px;
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    color: white;
+    box-shadow: 2px 2px 7px 1px #323232;
+}
+
+div#main p{
+    padding: 0 10px;
+}
+
+/*POPUP WINDOW START*/
+
+div#outer {
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--color1);
+    box-shadow: 2px 2px 7px 1px #909090;
+    position: fixed;
+    left: 23.5%;
+}
+
+div#inner {
+    padding: 10px;
+    border-radius: 4px;
+    background-color: var(--color2);
+}
+
+input,
+select {
+    display: block;
+    border: 1px solid var(--borderColor1);
+    border-radius: 3px;
+    background-color: white;
+}
+
+button,
+div.appointment, div#getDate {
+    padding: 6px 6px 4px 6px;
+    border: none;
+    border-radius: 3px;
+    background-color: var(--btnColor1);
+    color: white;
+    cursor: pointer;
+}
+
+div#getDate{
+    display: inline-block;
+    width: 35%;
+}
+
+div.appointment {
+    display: inline-block;
+    width: 40px;
+    margin: 5px;
+}
+
+div.taken, div.taken:hover{
+    background-color: grey !important;
+}
+
+div.chosenAppointment, div.appointment:hover, button:hover, div#getDate:hover {
+    background-color: var(--btnColor2);
+}
+
+#loader {
+    margin-top: 5px;
+    border: 8px solid var(--color1);
+    border-top: 8px solid var(--btnColor1);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+/*RESPONSIVITY START*/
+
+@media (max-width: 500px) {
+    div#outer {
+    left: 3%;
+    position: fixed;
+    width: 88%;
+    }
+}
