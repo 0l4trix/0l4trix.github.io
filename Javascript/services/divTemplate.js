@@ -75,7 +75,7 @@ const divTemplate = (function () {
         }
 
         set image(img) {
-            this.imageElement.style.cssText += `background-image: url('../img/${img}'); background-size: 100%`;
+            this.imageElement.style.cssText += `background-image: url('${img}'); background-size: 100%`;
         }
 
         get image() {
