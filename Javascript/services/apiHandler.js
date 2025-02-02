@@ -16,7 +16,7 @@ async function getHairdressers() {
     let allHairdressers = [];
     for (const element of data) {
         let img = `${element.id}.jpg`;
-        await fetch('../data/intros.json')
+        await fetch('https://0l4trix.github.io/Javascript/data/intros.json')
             .then(res => res.json())
             .then(data => {
                 allHairdressers.push(new hairdresser.Hairdresser(element, img, data.find(n => n.id == element.id).profession, data.find(n => n.id == element.id).text));
