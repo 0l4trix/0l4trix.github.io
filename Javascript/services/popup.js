@@ -9,7 +9,8 @@ const template = `
             <input type="text" id="name" placeholder="Név">
             <input type="tel" id="phone" placeholder="Telefonszám">
             <select></select>
-            <input type="text" id="datepicker" placeholder="Dátum" readonly><div id="getDate">Időpontok</div>
+            <input type="text" id="datepicker" placeholder="Dátum" readonly>
+            <div id="getDate">Időpontok</div>
             <div id="loader" class="hidden"></div>
             <div id="appointmentContainer" class="hidden"></div>
         </div>            
@@ -41,6 +42,9 @@ function create() {
         const confirmBtn = document.createElement('button');
         const cancelBtn = confirmBtn.cloneNode(true);
         const date = boxElement.querySelector('#datepicker');
+        $( function() {
+            $( "#datepicker" ).datepicker();
+          } );
         const appointmentContainer = boxElement.querySelector('#appointmentContainer');
         date.addEventListener('click', function () {
             appointmentContainer.classList.add('hidden');
