@@ -41,6 +41,7 @@ function create() {
     if (!document.getElementById(contentId)) {
         const confirmBtn = document.createElement('button');
         const cancelBtn = confirmBtn.cloneNode(true);
+        const loader = boxElement.querySelector('#loader');
         const date = boxElement.querySelector('#datepicker');
         $( function() {
             $( "#datepicker" ).datepicker();
@@ -74,8 +75,7 @@ function create() {
         confirmBtn.addEventListener('click', function () {
             let name = boxElement.querySelector('#name');
             let phone = boxElement.querySelector('#phone');
-            const loader = boxElement.querySelector('#loader');
-            if (name.value.trim() !== '' && phone.value.trim().match(/^[+0-9][-0-9]+/g) !== null && date.value !== '' && boxElement.querySelector('.chosenAppointment'))
+            if (name.value.trim() !== '' && phone.value.trim().match(/^[+0-9][-0-9]+/g) !== null && boxElement.querySelector('.chosenAppointment'))
                 (async () => {
                     loader.classList.remove('hidden');
                     const fullDate = `${smallFunctions.convertDateFormat(date.value)} ${boxElement.querySelector('.chosenAppointment').innerText}:00`;
@@ -90,7 +90,6 @@ function create() {
                             id: await apiHandler.getLastAppointmentId() + 1,
                             service: boxElement.querySelector('select').value
                         }
-                    console.log(newAppointment);
                     await apiHandler.sendAppointment(newAppointment, document.getElementById(`${contentId}1`));
                     document.getElementById(contentId).classList.add('hidden');
                     confirmBtn.classList.add('hidden');
