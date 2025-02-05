@@ -6,10 +6,10 @@ const contentId = 'inner';
 
 const template = `
         <div id="${contentId}">
-            <input type="text" id="name" placeholder="Név">
-            <input type="tel" id="phone" placeholder="Telefonszám">
+            <input type="text" id="name">
+            <input type="tel" id="phone">
             <select></select>
-            <input type="text" id="datepicker" placeholder="Dátum" readonly>
+            <input type="text" id="datepicker" readonly>
             <div id="getDate">Időpontok</div>
             <div id="loader" class="hidden"></div>
             <div id="appointmentContainer" class="hidden"></div>
@@ -41,8 +41,25 @@ function create() {
     if (!document.getElementById(contentId)) {
         const confirmBtn = document.createElement('button');
         const cancelBtn = confirmBtn.cloneNode(true);
-        const loader = boxElement.querySelector('#loader');
+        const name = boxElement.querySelector('#name');
+        const phone = boxElement.querySelector('#phone');
         const date = boxElement.querySelector('#datepicker');
+        const loader = boxElement.querySelector('#loader');
+        function inputReset(){
+            name.placeholder = "Név";
+            name.value = '';
+            if(name.classList.contains('alert'))
+                name.classList.remove('alert');
+            phone.placeholder = "Telefonszám";
+            phone.value = '';
+            if(phone.classList.contains('alert'))
+                phone.classList.remove('alert');
+            date.placeholder = "Dátum";
+            date.value = '';
+            if(date.classList.contains('alert'))
+                date.classList.remove('alert');
+        }
+        inputReset();
         $( function() {
             $( "#datepicker" ).datepicker();
           } );
@@ -73,8 +90,6 @@ function create() {
         })
 
         confirmBtn.addEventListener('click', function () {
-            let name = boxElement.querySelector('#name');
-            let phone = boxElement.querySelector('#phone');
             if (name.value.trim() !== '' && phone.value.trim().match(/^[+0-9][-0-9]+/g) !== null && boxElement.querySelector('.chosenAppointment'))
                 (async () => {
                     loader.classList.remove('hidden');
@@ -93,17 +108,36 @@ function create() {
                     await apiHandler.sendAppointment(newAppointment, document.getElementById(`${contentId}1`));
                     document.getElementById(contentId).classList.add('hidden');
                     confirmBtn.classList.add('hidden');
-                    date.value = '';
-                    name.value = '';
-                    phone.value = '';
                     loader.classList.add('hidden');
+                    inputReset();
                 })();
+            else {
+                if(name.value.trim() == ''){
+                    name.classList.add('alert');
+                    name.placeholder = 'Kérem adja meg a nevét!';
+                }
+                if(phone.value.trim() == ""){
+                    phone.classList.add('alert');
+                    phone.placeholder = 'Kérem adja meg telefonszámát!';
+
+                }else if(phone.value.trim().match(/^[+0-9][-0-9]+/g) == null){
+                    phone.value = '';
+                    phone.classList.add('alert');
+                    phone.placeholder = 'Nem megfelelő telefonszám!';
+                }
+                if(date.value == "" || !boxElement.querySelector('.chosenAppointment')){
+                    date.value = "";
+                    date.classList.add('alert');
+                    date.placeholder = 'Kérem válasszon egy időpontot!';
+                }
+            }
         });
 
         cancelBtn.addEventListener('click', function () {
             document.getElementById(contentId).classList.remove('hidden');
             document.getElementById(`${contentId}1`).innerText = null;
             hide();
+            inputReset();
             if (confirmBtn.classList.contains('hidden'))
                 confirmBtn.classList.remove('hidden');
         })

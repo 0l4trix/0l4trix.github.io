@@ -39,9 +39,13 @@ const searchTemplate = (function () {
             this.button = options.buttonText;
 
             this.buttonElement.addEventListener('click', function () {
-                let id = this.parentElement.querySelector('input').value;
+                let value = this.parentElement.querySelector('input').value;
                 let loader = document.querySelector('#loader');
                 (async function () {
+                    if (isNaN(Number(value)))
+                        var id = await apiHandler.getHairdresserId(value);
+                    else
+                        var id = value;
                     loader.classList.remove('hidden');
                     let results = await apiHandler.getAppointmentsById(id);
                     let string = '<p>';

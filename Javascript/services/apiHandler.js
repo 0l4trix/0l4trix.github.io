@@ -3,7 +3,7 @@ import * as hairdresser from '../models/hairdresser.js';
 const apiHairdressers = 'https://salonsapi.prooktatas.hu/api/hairdressers';
 const apiAppointments = 'https://salonsapi.prooktatas.hu/api/appointments';
 
-async function getHairdressers() {
+async function getAllHairdressers(){
     const response = await fetch(apiHairdressers)
         .then((res) => {
             if (res.status >= 400 && response.status < 600)
@@ -12,6 +12,11 @@ async function getHairdressers() {
                 return res;
         })
     const data = await response.json();
+    return data;
+}
+
+async function getHairdressers() {
+    let data = await getAllHairdressers();
 
     let allHairdressers = [];
     for (const element of data) {
@@ -24,6 +29,16 @@ async function getHairdressers() {
             .catch(err => console.log(err));
     }
     return allHairdressers;
+}
+
+async function getHairdresserId(name){
+    let data = await getAllHairdressers();
+    let search = "";
+    for (const element of data) {
+        if (element.name == name)
+            search = element.id; break;
+    }
+    return search;
 }
 
 async function getAllAppointments() {
@@ -92,4 +107,4 @@ async function sendAppointment(data, logInto) {
         });
 }
 
-export { getHairdressers, getAppointmentsById, getAppointmentsByDate, getLastAppointmentId, sendAppointment }
+export { getHairdressers, getHairdresserId, getAppointmentsById, getAppointmentsByDate, getLastAppointmentId, sendAppointment }
