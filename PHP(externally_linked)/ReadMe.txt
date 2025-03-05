@@ -1,0 +1,3 @@
+SearchMyHome is program meant to help keep stock of what you have at home (or at work) and where they are stored. Of course, it only works if you properly update it. As such, it's not recommended to use it for smaller, often used storage spaces, such as a fridge; only for bigger, less used places with plenty of things, like an attic.
+
+It remembers all your storage spaces and all the items inside them. You can search by location (both storage unit and room), name or even description. You can update or delete your listings anytime, as well as add new one of course.
